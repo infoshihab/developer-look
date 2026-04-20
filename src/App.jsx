@@ -1,60 +1,67 @@
 import { useEffect, useState } from 'react'
 
-const navItems = ['Expertises', 'Work', 'About', 'Contact']
+const navItems = ['Expertise', 'Work', 'About', 'Contact']
 
 const expertiseItems = [
   {
     id: '01',
     title: 'Social strategy',
-    text: 'Slimme strategie. Sterke start. We duiken diep in jouw merk, doelgroep en doelen. En vertalen data naar een duidelijk plan met formats die echt impact maken.',
-    linkLabel: 'Meer over social strategie',
+    text: 'Smart strategy. Strong start. We dive into your brand, audience, and goals, then translate insights into a clear action plan.',
+    linkLabel: 'More about social strategy',
   },
   {
     id: '02',
     title: 'Content creation',
-    text: 'Content die opvalt en raakt. Creatief, snel en energiek. Altijd met jouw merkverhaal en resultaat als vertrekpunt.',
-    linkLabel: 'Meer over content creatie',
+    text: 'Content that stands out and connects. Creative, fast, and energetic, always built around your brand story and results.',
+    linkLabel: 'More about content creation',
   },
   {
     id: '03',
     title: 'Activation',
-    text: 'Zichtbaar waar en wanneer het telt. We zorgen dat jouw content op de juiste kanalen bij de juiste doelgroep terechtkomt.',
-    linkLabel: 'Meer over activatie',
+    text: 'Visible where and when it matters. We distribute your content through the right channels to reach the right audience.',
+    linkLabel: 'More about activation',
   },
   {
     id: '04',
     title: 'Data',
-    text: 'Inzichten die impact maken. We meten, analyseren en sturen bij zodat je precies weet wat werkt en waar je kunt versnellen.',
-    linkLabel: 'Meer over data',
+    text: 'Insights that drive impact. We measure, analyze, and optimize continuously so you always know what is working.',
+    linkLabel: 'More about data',
   },
 ]
 
 const caseStudies = [
   {
-    title: 'Van nul naar vol, binnen 3 weken',
+    title: 'From Zero to Momentum in 3 Weeks',
     brand: 'Bullit',
-    text: 'Voor Bullit vertaalden we cultuur en energie naar social-first shorts met resultaat.',
-    image: '/images/work/bullit.jpg',
+    text: 'For Bullit, we translated culture and energy into social-first shorts that delivered fast momentum.',
+    image: '/images/work/work1.jpg',
   },
   {
-    title: 'Zacht in smaak, sterk in beeld',
+    title: 'Smooth in Flavor, Bold in Visuals',
     brand: 'Roasta',
-    text: 'Met to-the-point visuals brengen we de pure smaak van Jamaica over.',
-    image: '/images/work/roasta.jpg',
+    text: 'With focused visuals, we transformed product flavor into a bold and memorable digital identity.',
+    image: '/images/work/work2.jpg',
   },
   {
-    title: 'Content die echt smaakt (en raakt)',
+    title: 'Content That Truly Connects',
     brand: 'Loco',
-    text: 'Voor Loco vertaalden we sfeer naar shorts die werken.',
-    image: '/images/work/loco.jpg',
+    text: 'For Loco, we turned atmosphere into high-impact content designed to engage and convert.',
+    image: '/images/work/work3.jpg',
   },
 ]
 
-const brands = ['Brouwersnös', 'Skin by Kim', 'TROTS', 'Bierlab', 'House of Bèta', 'MOOI']
+const brands = [
+  { name: 'Brand 1', image: '/images/brands/brand1.png' },
+  { name: 'Brand 2', image: '/images/brands/brand2.jpg' },
+  { name: 'Brand 3', image: '/images/brands/brand3.png' },
+  { name: 'Brand 4', image: '/images/brands/brand4.jpg' },
+  { name: 'Brand 5', image: '/images/brands/brand5.jpg' },
+  { name: 'Brand 6', image: '/images/brands/brand6.jpg' },
+]
 
 const stats = [
-  { value: '10M+', label: 'Organische views', desc: 'Groei door slimme content' },
-  { value: '30+', label: 'Merken geholpen', desc: 'Van start-up tot multinational' },
+  { value: '10M+', label: 'Organic views', desc: 'Growth powered by smart content systems' },
+  { value: '30+', label: 'Brands supported', desc: 'From startup teams to global brands' },
 ]
 
 function App() {
@@ -118,21 +125,19 @@ function App() {
           <div className="hero-glow" />
           <p className="eyebrow">Get Hyped - Social-first content agency</p>
           <p className="hero-kicker">Get Hyped. Get Noticed. Get Results.</p>
-          <p className="hero-subkicker">Klaar met gokken op content die niets oplevert?</p>
+          <p className="hero-subkicker">Done guessing what content will perform?</p>
           <h1>
-            Wij maken content die opvalt. Die blijft hangen. Die jouw doelgroep raakt en jouw merk in
-            beweging brengt. Snel, krachtig en energiek.
+            We create content that stands out, stays memorable, and moves your audience to action.
           </h1>
           <p className="hero-copy">
-            We stoppen niet bij mooie plaatjes en vette beelden. We maken het meetbaar. Zo weet je
-            precies wat werkt en wat niet. Nooit meer content zonder strategie. Nooit meer content
-            zonder resultaat.
+            We do more than produce beautiful visuals. We make performance measurable, so you know what
+            works, what to improve, and where to scale next.
           </p>
           <a className="cta-link" href="#">
-            Bekijk al ons werk
+            View all work
           </a>
           <a className="ghost-link" href="#">
-            Leer ons kennen
+            Learn about us
           </a>
           <div className="stats">
             {stats.map((item) => (
@@ -164,10 +169,10 @@ function App() {
         </section>
 
         <section className="cases" id="work">
-          <p className="label">Content dat scoort.</p>
+          <p className="label">Content That Scores</p>
           <h2>
-            Wij vertellen jouw verhaal. Op een manier die echt past bij jouw doelgroep. Met creatieve
-            content die werkt en het verschil maakt.
+            We tell your story in a way that fits your audience, combining creative direction with
+            performance-focused execution.
           </h2>
           <div className="case-list">
             {caseStudies.map((item) => (
@@ -191,8 +196,8 @@ function App() {
           <div className="brands-wall" aria-label="Brand showcase">
             <div className="brand-grid-pro">
               {brands.map((brand) => (
-                <article key={brand} className="brand-tile">
-                  <span>{brand}</span>
+                <article key={brand.name} className="brand-tile">
+                  <img src={brand.image} alt={brand.name} loading="lazy" />
                 </article>
               ))}
             </div>
@@ -203,17 +208,17 @@ function App() {
           <div className="contact-glow" />
           <div className="contact-main">
             <p className="label">Let&apos;s Get Hyped!</p>
-            <h2>Let&apos;s Get Hyped!</h2>
+            <h2>Let&apos;s Build Something Great</h2>
             <p>
-              Get Hyped! Neem contact op en ontdek hoe social-first content, strategie en data samen
-              zorgen voor resultaat.
+              Reach out and discover how social-first content, strategy, and data can work together to
+              accelerate your growth.
             </p>
             <div className="contact-actions">
               <a className="contact-primary" href="mailto:info@gethyped.nl">
-                Mail ons direct
+                Email us directly
               </a>
               <a className="contact-secondary" href="tel:+31615337496">
-                Of bel +31 6 1533 7496
+                Or call +31 6 1533 7496
               </a>
             </div>
           </div>
@@ -223,12 +228,12 @@ function App() {
               <a href="mailto:info@gethyped.nl">info@gethyped.nl</a>
             </article>
             <article>
-              <span>Telefoon</span>
+              <span>Phone</span>
               <a href="tel:+31615337496">+31 6 1533 7496</a>
             </article>
             <article>
-              <span>Adres</span>
-              <p>Beltrumsestraat 6, 7141 AL Groenlo</p>
+              <span>Address</span>
+              <p>Beltrumsestraat 6, 7141 AL Groenlo, Netherlands</p>
             </article>
           </div>
         </section>
@@ -237,7 +242,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-top">
           <p className="footer-kicker">Let&apos;s Get Hyped!</p>
-            <h3>Get Hyped! Neem contact op</h3>
+          <h3>Get Hyped! Let&apos;s start your next campaign.</h3>
         </div>
 
         <div className="footer-grid">
@@ -271,7 +276,7 @@ function App() {
             <p>Follow us</p>
             <a href="#">Instagram</a>
             <a href="#">LinkedIn</a>
-            <a href="#">Privacyvoorwaarden</a>
+            <a href="#">Privacy policy</a>
           </div>
         </div>
 
