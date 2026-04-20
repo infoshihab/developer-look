@@ -25,3 +25,12 @@ Steps:
 3. In GitHub repo settings, set Pages source to:
    - Branch: `main`
    - Folder: `/docs`
+
+## Deploy to Render
+
+This repo includes `render.yaml` for static deployment.
+
+- Build command: `npm install && npm run build`
+- Publish directory: `docs`
+
+If configuring manually in Render, use the same values above.
