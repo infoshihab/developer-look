@@ -6,9 +6,14 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   server: {
-    host: true,          // allows 0.0.0.0
+    host: true,
     port: 5173,
-    allowedHosts: 'all'  // ✅ allow all hosts
+    allowedHosts: true,
+  },
+  preview: {
+    host: true,
+    port: 4173,
+    allowedHosts: true,
   },
   build: {
     outDir: 'docs',
